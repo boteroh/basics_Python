@@ -18,9 +18,6 @@ print(f"\n--> El número mayor es: {max(numeros)} --")
 print(f"--> El número menor es: {min(numeros)} --")
 
 match numeros[0]:
-    # case _ if numeros[0] != numeros[1] and numeros[1] != numeros[2]:
-    #     print("\n***todos los números son diferentes")
-
     case _ if numeros[0] == numeros[1] and numeros[1] == numeros[2] and numeros[0] == numeros[2]:
         print(f"\nTodos los números son iguales")
 
