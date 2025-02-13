@@ -1,32 +1,37 @@
-# contador = 1
-# numeros = []
+contador = 1
+numeros = []
 
-# print("---> INGRESE LOS NÚMEROS SOLICITADOS <---")
+print("\n---> INGRESE NÚMEROS ENTEROS <---")
 
-# while contador <= 3:    
+while contador <= 3:
 
-#     numero = input(f"\nNúmero: {contador} \n--> ")
-#     numeros.append(numero)
+    try:
+        numero = int(input(f"\nNúmero: {contador} \n--> "))
+        numeros.append(numero)
+        contador += 1
+    except ValueError:
+        print("ERROR !!! ingresa un número entero válido")
 
-#     contador += 1
+print(numeros)
 
-# print(numeros)
+print(f"\n--> El número mayor es: {max(numeros)} --")
+print(f"--> El número menor es: {min(numeros)} --")
 
-# match 
-#     case numeros[0] == numeros[1] and numeros[1] == numeros[2]:
-#         print("todos los números son iguales")
-#     case
+match numeros[0]:
+    # case _ if numeros[0] != numeros[1] and numeros[1] != numeros[2]:
+    #     print("\n***todos los números son diferentes")
+
+    case _ if numeros[0] == numeros[1] and numeros[1] == numeros[2] and numeros[0] == numeros[2]:
+        print(f"\nTodos los números son iguales")
+
+    case _ if numeros[0] == numeros[1]:
+        print(f"\nNúmeros iguales: {numeros[0]} y {numeros[1]}")
     
+    case _ if numeros[1] == numeros[2]:
+        print(f"\nNúmeros iguales: {numeros[1]} y {numeros[2]}")
 
-
+    case _ if numeros[0] == numeros[2]:
+        print(f"\nNúmeros iguales: {numeros[0]} y {numeros[2]}")
     
-
-# elif numeros[0] > numeros[1] and numeros[1] >= numeros[2]:
-#     print(f"Número: {numeros[0]} es mayor")
-
-# elif numeros[0] <= numeros[1] and numeros[1] < numeros[2]:
-#     print(f"Número: {numeros[2]} es mayor")
-
-
-# else:
-#     print("Algún número es mayor o menor")
+    case _:
+        print("\n*** No hay números repetidos ***")
